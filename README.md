@@ -2,7 +2,7 @@
 
 ## O que faz? Para que serve?
 
-Para esse projeto iremos usar o Rsync como benchmark de disco, tempo e rede.
+Para esse projeto iremos usar o Rsync como benchmark de disco e de tempo de CPU.
 
 Rsync é um programa utilizado para sincronização e transferencia de arquivos entre diretorios locais e entre computadores.
 
@@ -10,7 +10,7 @@ Rsync é um programa utilizado para sincronização e transferencia de arquivos 
 
 A vantagem do rsync é que ele permite medir o desempenho em três ramos, no caso performance da cpu, performace relacionada ao disco e ele tambem permite medir a performance da rede. 
 
-Obviamente fazer a medida de rede dificulta um pouco o benchmark devido a necessidade de usar 2 computadores, mas o fato dele permitir isso é o grande diferencial.
+No caso apenas iremos apenas medir o tempo de cpu e disco, mas mesmo assim por ser um programa capaz de sincronizar arquivos de diretorios diferentes ele acaba por usar intenssivamente o disco, sendo assim um otimo candidato para benchmarcks de disco
 
 ## O que baixar? Como compilar/instalar?
 
@@ -71,12 +71,29 @@ Para medir o desempenho de cpu fora o usado o comando perf. Usando os seguintes:
 		perf stat -d
 		perf report -stdio
 
-Já o desempenho de disco é mostrado pelo próprio rsync e o desempenho da rede tambem, basta utilizar o modo verbose e o de human readable especificados na parte anterior.
+Já o desempenho de disco é mostrado pelo próprio rsync, basta utilizar o modo verbose e o de human readable especificados na parte anterior.
 
 Por fim fora disponibilizado um script que chamado desempenho.sh que roda os comandos necessarios para o teste de desempenho.
 
+Para rodar o script basta usar o seguinte comando:
+
+		sh desempenho.sh
+
 ## Como apresentar o desempenho?
 
-O desempenho 
+O desempenho sera coletado atraves dos seguintes campos: 
+		
+		1.184645160 seconds time elapsed                                          ( +- 93.27% ) 
+		coletado do perf com repetições sendo a porcentagem o desvio padrão
+
+		11.216647547 seconds time elapsed
+		tambem coletado do pef mas sem repetições (teste de sincronia)
+
+		sent 1.40K bytes  received 12 bytes  2.83K bytes/sec
+		Coletado dos dois ultimos testes de disco (impresso pelo rsync)
+
+Depois disso é feito uma media em relação aos resultados de tempo apresentados na primeira etapa e uma media levando em consideração os resultados apresentados pela cpu. Com isso teremos a taxa de transferência media para as duas situações que foram testadas o rsync.
+
+Nota: Como pode ser visto o resultado do tempo de execução da transferencia de uma arquivo depende muito do tamanho do arquivo e infelizmente não foi possivel passar de 1s com os arquivos foram escolhidos para o teste, logo pode ser ignorado o tempo do teste de transferência.
 
 ## Medições base (uma maquina)
