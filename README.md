@@ -91,8 +91,8 @@ O desempenho sera coletado atraves dos seguintes campos:
 
 		sent 1.40K bytes  received 12 bytes  2.83K bytes/sec
 		Coletado dos dois ultimos testes de disco (impresso pelo rsync)
-
-Depois disso é feito uma media em relação aos resultados de tempo apresentados na primeira etapa e uma media levando em consideração os resultados apresentados pela cpu. Com isso teremos a taxa de transferência media para as duas situações que foram testadas o rsync.
+		
+Com isso teremos o desempenho do rsync fazendo apenas uma transferencia e sincronizando dois diretorios distintos.
 
 Nota: Como pode ser visto o resultado do tempo de execução da transferencia de uma arquivo depende muito do tamanho do arquivo e infelizmente não foi possivel passar de 1s com os arquivos foram escolhidos para o teste, logo pode ser ignorado o tempo do teste de transferência.
 
