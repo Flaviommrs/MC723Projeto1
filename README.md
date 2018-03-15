@@ -10,7 +10,7 @@ Rsync é um programa utilizado para sincronização e transferencia de arquivos 
 
 A vantagem do rsync é que ele permite medir o desempenho em três ramos, no caso performance da cpu, performace relacionada ao disco e ele tambem permite medir a performance da rede. 
 
-No caso apenas iremos apenas medir o tempo de cpu e disco, mas mesmo assim por ser um programa capaz de sincronizar arquivos de diretorios diferentes ele acaba por usar intenssivamente o disco, sendo assim um otimo candidato para benchmarcks de disco
+No caso apenas iremos apenas medir o tempo de cpu e disco, mas mesmo assim por ser um programa capaz de sincronizar arquivos de diretorios diferentes ele acaba por usar intensivamente o disco, sendo assim um otimo candidato para benchmarcks de disco
 
 ## O que baixar? Como compilar/instalar?
 
@@ -96,4 +96,18 @@ Depois disso é feito uma media em relação aos resultados de tempo apresentado
 
 Nota: Como pode ser visto o resultado do tempo de execução da transferencia de uma arquivo depende muito do tamanho do arquivo e infelizmente não foi possivel passar de 1s com os arquivos foram escolhidos para o teste, logo pode ser ignorado o tempo do teste de transferência.
 
-## Medições base (uma maquina)
+## Medições base (na máquina "smurfs")
+
+Especificações da Máquina: Intel Core i5-4590, 3.3 GHz, 4 Cores, 6MB Cache, 8GB RAM, 1TB.
+
+Na fase do Teste da CPU obtivemos os seguintes valores:
+
+3.471816437 seconds time elapsed                                          ( +-  0.18% )
+
+27.467542085 seconds time elapsed
+
+Na fase do Teste do Disco, obtivemos:
+
+sent 232.91M bytes  received 604 bytes  8.17M bytes/sec, para a parte com compressão
+
+sent 235.10M bytes  received 607 bytes  10.93M bytes/sec, para a parte sem compressão

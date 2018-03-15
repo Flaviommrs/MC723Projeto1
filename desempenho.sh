@@ -25,5 +25,7 @@ echo '=============='
 echo 'Teste de Sincronização de Diretorios - com compressao'
 rsync -azvh --progress TesteDeSincronizacao/ DestinoSincronizacaoCompressao/
 
+rm -r DestinoSincronizacaoCompressao/
+
 echo 'Teste de Sincronização de Diretorios - sem compressao'
 rsync -avh --progress TesteDeSincronizacao/ DestinoSincronizacaoSemCompressao/
