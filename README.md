@@ -104,7 +104,23 @@ Na fase do Teste da CPU obtivemos os seguintes valores:
 
 3.471816437 seconds time elapsed                                          ( +-  0.18% )
 
-27.467542085 seconds time elapsed
+-Teste 1-
+27.455669505 seconds time elapsed
+
+-Teste 2-
+27.429920123 seconds time elapsed
+
+-Teste 3-
+27.392531184 seconds time elapsed
+
+-Teste 4-
+27.405143608 seconds time elapsed
+
+-Teste 5-
+27.352458920 seconds time elapsed
+
+Média do tempo: 27.4 s
+Desvio: 0.04 s
 
 Na fase do Teste do Disco, obtivemos:
 
