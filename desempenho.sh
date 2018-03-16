@@ -11,7 +11,27 @@ echo '============'
 echo 'tempo de cpu com transferencia'
 perf stat -r 10 rsync -zvh TesteDeTransferencia.mp4 DestinoTransferencia/
 
-echo 'tempo de cpu com sincronizacao'
+echo 'tempo de cpu com sincronizacao - 1'
+perf stat  rsync -azvh TesteDeSincronizacao/ DestinoSincronizacao/
+
+rm -r DestinoSincronizacao/
+
+echo 'tempo de cpu com sincronizacao - 2'
+perf stat  rsync -azvh TesteDeSincronizacao/ DestinoSincronizacao/
+
+rm -r DestinoSincronizacao/
+
+echo 'tempo de cpu com sincronizacao - 3'
+perf stat  rsync -azvh TesteDeSincronizacao/ DestinoSincronizacao/
+
+rm -r DestinoSincronizacao/
+
+echo 'tempo de cpu com sincronizacao - 4'
+perf stat  rsync -azvh TesteDeSincronizacao/ DestinoSincronizacao/
+
+rm -r DestinoSincronizacao/
+
+echo 'tempo de cpu com sincronizacao - 5'
 perf stat  rsync -azvh TesteDeSincronizacao/ DestinoSincronizacao/
 
 echo 'Preparando para o proximo teste'
